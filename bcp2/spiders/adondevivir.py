@@ -12,6 +12,7 @@ class AdondeVivirSpider(Spider):
         pl = PredioItemLoader(response=response)
 
         pl.add_value('url', response.url)
+        pl.add_xpath('name', '//h2[has-class("info-title")]')
 
         # nl.add_xpath('title', '//h1')
         # nl.add_xpath('content', '//div[has-class("news-text-content")]/p')
