@@ -13,10 +13,7 @@ class AdondeVivirSpider(Spider):
 
         pl.add_value('url', response.url)
         pl.add_xpath('name', '//h2[has-class("info-title")]')
+        pl.add_xpath('address', '//h2[has-class("info-location")]')
+        pl.add_xpath('description', '//div[has-class("description-container")]')
 
-        # nl.add_xpath('title', '//h1')
-        # nl.add_xpath('content', '//div[has-class("news-text-content")]/p')
-        # nl.add_xpath('image', '//div[has-class("image")]//img/@src')
-        # nl.add_value('url', response.url)
-        #
         yield pl.load_item()
