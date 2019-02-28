@@ -11,9 +11,11 @@ class AdondeVivirSpider(Spider):
     def parse(self, response):
         pl = PredioItemLoader(response=response)
 
+        pl.add_value('url', response.url)
+
         # nl.add_xpath('title', '//h1')
         # nl.add_xpath('content', '//div[has-class("news-text-content")]/p')
         # nl.add_xpath('image', '//div[has-class("image")]//img/@src')
         # nl.add_value('url', response.url)
         #
-        # yield nl.load_item()
+        yield pl.load_item()
