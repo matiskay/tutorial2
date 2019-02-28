@@ -15,5 +15,6 @@ class AdondeVivirSpider(Spider):
         pl.add_xpath('name', '//h2[has-class("info-title")]')
         pl.add_xpath('address', '//h2[has-class("info-location")]')
         pl.add_xpath('description', '//div[has-class("description-container")]')
+        pl.add_xpath('price', '//span[has-class("data-price")]')
 
         yield pl.load_item()

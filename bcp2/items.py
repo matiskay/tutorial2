@@ -13,6 +13,7 @@ class PredioItem(scrapy.Item):
     name = scrapy.Field()
     address = scrapy.Field()
     description = scrapy.Field()
+    price = scrapy.Field()
 
     url = scrapy.Field()
 
