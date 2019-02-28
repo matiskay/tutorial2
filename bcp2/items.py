@@ -6,9 +6,17 @@
 # https://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
+from scrapy.loader import ItemLoader
 
 
-class Bcp2Item(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class PredioItem(scrapy.Item):
+    name = scrapy.Field()
+    address = scrapy.Field()
+    description = scrapy.Field()
+
+    url = scrapy.Field()
+
+
+class PredioItemLoader(ItemLoader):
+    default_item_class = PredioItem
+
